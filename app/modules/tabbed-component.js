@@ -14,6 +14,7 @@ APP.tabbedComponent = (function() {
       url: 'http://content.guardianapis.com/search?format=json&section=football&show-fields=trailText&page-size=5&api-key=9wur7sdh84azzazdt3ye54k4&callback=APP.tabbedComponent.render'
     }
   };
+  var template = Hogan.compile('<ul>{{#results}}<li><h2><a href="{{webUrl}}">{{webTitle}}</a></h2><span>{{fields.trailText}}</span></li>{{/results}}</ul>');
   var showLoadingSpinner = function() {
     document.getElementById('tab-content').innerHTML = 'Loading content';
   };
@@ -44,12 +45,9 @@ APP.tabbedComponent = (function() {
     },
     render: function(body) {
       var results = body.response.results;
-      var outputHTML = results.reduce(function(currentHTML, result) {
-        var newHTML = currentHTML + '<br>' + result.webTitle;
+      var outputHTML = template.render({ results: results });
 
-        return newHTML;
-      }, '');
-
+      outputHTML = '<ul>' + outputHTML + '</ul>';
       document.getElementById('tab-content').innerHTML = outputHTML;
     }
   };

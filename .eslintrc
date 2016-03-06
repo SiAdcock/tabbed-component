@@ -22,6 +22,7 @@
     "semi": [2, "always"]
   },
   "globals": {
-    "APP": true
+    "APP": true,
+    "Hogan": true
   }
 }
