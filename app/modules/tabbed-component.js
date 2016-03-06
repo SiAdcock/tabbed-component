@@ -42,8 +42,15 @@ APP.tabbedComponent = (function() {
     init: function() {
       bindEvents();
     },
-    render: function(data) {
-      console.log('data', data.response.results);
+    render: function(body) {
+      var results = body.response.results;
+      var outputHTML = results.reduce(function(currentHTML, result) {
+        var newHTML = currentHTML + '<br>' + result.webTitle;
+
+        return newHTML;
+      }, '');
+
+      document.getElementById('tab-content').innerHTML = outputHTML;
     }
   };
 }());
