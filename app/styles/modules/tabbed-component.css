@@ -1,23 +1,26 @@
-.tabbed-component__tabs {
+.tabbed-component {
     width: 100%;
+    max-width: 1000px;
 }
 
 .tabbed-component__tab {
     display: inline-block;
     width: 33%;
     text-align: center;
+    border: 1px solid #cccccc;
 }
 
 .tabbed-component__tab-link {
     display: block;
     padding: .5em;
-    background-color: silver;
+    background-color: #dddddd;
 }
 
 .tabbed-component__tab-link_selected {
     background-color: white;
 }
 
-.tabbed-component__content {
-
+.tabbed-component__content-item {
+    padding: .5em;
+    border-bottom: 2px solid #dddddd;
 }

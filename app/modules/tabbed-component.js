@@ -14,7 +14,16 @@ APP.tabbedComponent = (function() {
       url: 'http://content.guardianapis.com/search?format=json&section=football&show-fields=trailText&page-size=5&api-key=9wur7sdh84azzazdt3ye54k4&callback=APP.tabbedComponent.render'
     }
   };
-  var template = Hogan.compile('<ul>{{#results}}<li><h2><a href="{{webUrl}}">{{webTitle}}</a></h2><span>{{fields.trailText}}</span></li>{{/results}}</ul>');
+  var template = Hogan.compile(
+    '<ul>' +
+      '{{#results}}' +
+        '<li class="tabbed-component__content-item">' +
+          '<h2><a href="{{webUrl}}">{{webTitle}}</a></h2>' +
+          '<span>{{fields.trailText}}</span>' +
+        '</li>' +
+      '{{/results}}' +
+    '</ul>'
+  );
   var removeSelectedClass = function(el) {
     el.classList.remove('tabbed-component__tab-link_selected');
   };
