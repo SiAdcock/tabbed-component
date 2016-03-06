@@ -8,6 +8,19 @@
     width: 33%;
     text-align: center;
     border: 1px solid #cccccc;
+    border-top-width: 3px;
+}
+
+.tabbed-component__tab__news:hover {
+    border-top: 3px solid #D61D00;
+}
+
+.tabbed-component__tab__sport:hover {
+    border-top: 3px solid #008000;
+}
+
+.tabbed-component__tab__travel:hover {
+    border-top: 3px solid #066EC9;
 }
 
 .tabbed-component__tab-link {
