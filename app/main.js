@@ -1,3 +1,7 @@
 (function() {
-  console.log('Hello world');
+  'use strict';
+
+  if (APP) {
+    APP.tabbedComponent.init();
+  }
 }());

@@ -20,5 +20,8 @@
     "space-before-blocks": 2,
     "new-cap": 0,
     "semi": [2, "always"]
+  },
+  "globals": {
+    "APP": true
   }
 }
