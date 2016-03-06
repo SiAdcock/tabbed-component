@@ -1,6 +1,7 @@
 .tabbed-component {
     width: 100%;
     max-width: 1000px;
+    border: 1px solid #cccccc;
 }
 
 .tabbed-component__tab {
@@ -9,6 +10,10 @@
     text-align: center;
     border: 1px solid #cccccc;
     border-top-width: 3px;
+}
+
+.tabbed-component__tab:last-child {
+    width: 34%;
 }
 
 .tabbed-component__tab__news:hover {
