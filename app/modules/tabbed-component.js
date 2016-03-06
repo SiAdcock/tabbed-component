@@ -15,6 +15,9 @@ APP.tabbedComponent = (function() {
     }
   };
   var template = Hogan.compile('<ul>{{#results}}<li><h2><a href="{{webUrl}}">{{webTitle}}</a></h2><span>{{fields.trailText}}</span></li>{{/results}}</ul>');
+  var removeSelectedClass = function(el) {
+    el.classList.remove('tabbed-component__tab-link_selected');
+  };
   var showLoadingSpinner = function() {
     document.getElementById('tab-content').innerHTML = 'Loading content';
   };
@@ -27,15 +30,13 @@ APP.tabbedComponent = (function() {
     scriptNode.parentNode.removeChild(scriptNode);
   };
   var bindEvents = function() {
-    document.getElementById('travel').addEventListener('click', function() {
-      loadData('travel');
-    });
-    document.getElementById('uk-news').addEventListener('click', function() {
-      loadData('uk-news');
-    });
-    document.getElementById('football').addEventListener('click', function() {
-      loadData('football');
-    });
+    document
+      .getElementsByClassName('tabbed-component__tabs')[0]
+      .addEventListener('click', function(e) {
+        Array.prototype.slice.call(document.getElementsByClassName('tabbed-component__tab-link')).forEach(removeSelectedClass);
+        e.target.classList.add('tabbed-component__tab-link_selected');
+        loadData(e.target.id);
+      });
   };
 
   return {
@@ -45,7 +46,7 @@ APP.tabbedComponent = (function() {
     },
     render: function(body) {
       var results = body.response.results;
-      var outputHTML = template.render({ results: results });
+      var outputHTML = template.render({results: results});
 
       document.getElementById('tab-content').innerHTML = outputHTML;
     }

@@ -14,23 +14,24 @@
 <body>
 
 <div id="container" class="tabbed-component">
-  <div class="tabbed-component--tabs">
+  <div class="tabbed-component__tabs">
     <ul>
-      <li class="tabbed-component--tab">
-        <a class="tabbed-component--tab-link" id="uk-news" href="#">UK News</a>
-      </li><li class="tabbed-component--tab">
-      <a class="tabbed-component--tab-link" id="travel" href="#">Travel</a>
-    </li><li class="tabbed-component--tab">
-      <a class="tabbed-component--tab-link" id="football" href="#">Football</a>
+      <li class="tabbed-component__tab">
+        <a class="tabbed-component__tab-link tabbed-component__tab-link_selected" id="uk-news" href="#">UK News</a>
+      </li><li class="tabbed-component__tab">
+      <a class="tabbed-component__tab-link" id="travel" href="#">Travel</a>
+    </li><li class="tabbed-component__tab">
+      <a class="tabbed-component__tab-link" id="football" href="#">Football</a>
     </li>
     </ul>
   </div>
-  <div class="tabbed-component--content" id="tab-content">
+  <div class="tabbed-component__content" id="tab-content">
     Unable to fetch content
   </div>
 </div>
 
 <script src="app/lib/vendor/hogan-3.0.2.js"></script>
+<script src="app/lib/vendor/classList-1.1.20150312.js"></script>
 <script src="app/modules/tabbed-component.js"></script>
 <script src="app/main.js"></script>
 
