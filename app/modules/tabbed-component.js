@@ -47,7 +47,6 @@ APP.tabbedComponent = (function() {
       var results = body.response.results;
       var outputHTML = template.render({ results: results });
 
-      outputHTML = '<ul>' + outputHTML + '</ul>';
       document.getElementById('tab-content').innerHTML = outputHTML;
     }
   };

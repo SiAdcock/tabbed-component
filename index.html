@@ -9,18 +9,23 @@
 
   <link rel="stylesheet" href="app/styles/vendor/normalize.css">
   <link rel="stylesheet" href="app/styles/main.css">
+  <link rel="stylesheet" href="app/styles/modules/tabbed-component.css">
 </head>
 <body>
 
-<div id="container">
-  <div class="tabs">
+<div id="container" class="tabbed-component">
+  <div class="tabbed-component--tabs">
     <ul>
-      <li><a class="tab" id="uk-news" href="#">UK News</a></li>
-      <li><a class="tab" id="travel" href="#">Travel</a></li>
-      <li><a class="tab" id="football" href="#">Football</a></li>
+      <li class="tabbed-component--tab">
+        <a class="tabbed-component--tab-link" id="uk-news" href="#">UK News</a>
+      </li><li class="tabbed-component--tab">
+      <a class="tabbed-component--tab-link" id="travel" href="#">Travel</a>
+    </li><li class="tabbed-component--tab">
+      <a class="tabbed-component--tab-link" id="football" href="#">Football</a>
+    </li>
     </ul>
   </div>
-  <div class="tab-content" id="tab-content">
+  <div class="tabbed-component--content" id="tab-content">
     Unable to fetch content
   </div>
 </div>

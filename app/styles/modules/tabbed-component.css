@@ -1,0 +1,23 @@
+.tabbed-component--tabs {
+    width: 100%;
+}
+
+.tabbed-component--tab {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    background-color: silver;
+}
+
+.tabbed-component--tab-link {
+    display: block;
+    padding: .5em;
+}
+
+.tabbed-component--tab__selected {
+    background-color: white;
+}
+
+.tabbed-component--content {
+
+}
