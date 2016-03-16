@@ -1,0 +1,26 @@
+{
+  "name": "tabbed-component",
+  "version": "1.0.0",
+  "description": "A tabbed component for displaying sectional content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiAdcock/tabbed-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiAdcock/tabbed-component/issues"
+  },
+  "homepage": "https://github.com/SiAdcock/tabbed-component#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7"
+  }
+}
