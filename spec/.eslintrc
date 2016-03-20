@@ -1,0 +1,12 @@
+{
+  "env": {
+    "jasmine": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": [2, "single"]
+  },
+  "globals": {
+    "$": true
+  }
+}

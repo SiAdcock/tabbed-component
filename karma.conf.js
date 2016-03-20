@@ -1,8 +1,11 @@
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine-jquery', 'jasmine'],
     browsers: ['Chrome'],
-    files: ['spec/index.spec.js']
+    files: [
+      'node_modules/jquery/dist/jquery.js',
+      'spec/index.spec.js'
+    ]
   });
 };
