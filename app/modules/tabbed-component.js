@@ -31,9 +31,13 @@ APP.tabbedComponent = (function() {
   var showLoadingSpinner = function() {
     document.getElementById('tab-content').innerHTML = 'Loading content';
   };
-  var loadData = function(url) {
+  var loadData = function(url, done) {
     var scriptNode = document.createElement('script');
 
+    cache[url] = {};
+    if (done) {
+      cache[url].done = done;
+    }
     showLoadingSpinner();
     scriptNode.src = url;
     scriptNode.id = 'data-loader';
@@ -48,7 +52,7 @@ APP.tabbedComponent = (function() {
         Array.prototype.slice.call(document.getElementsByClassName('tabbed-component__tab-link')).forEach(removeSelectedClass);
         e.target.classList.add('tabbed-component__tab-link_selected');
         if (cache[url]) {
-          document.getElementById('tab-content').innerHTML = cache[url];
+          document.getElementById('tab-content').innerHTML = cache[url].html;
         }
         else {
           loadData(url);
@@ -57,9 +61,9 @@ APP.tabbedComponent = (function() {
   };
 
   return {
-    init: function() {
+    init: function(done) {
       bindEvents();
-      loadData(sections['uk-news'].url);
+      loadData(sections['uk-news'].url, done);
     },
     render: function(body) {
       var results = body.response.results;
@@ -68,8 +72,11 @@ APP.tabbedComponent = (function() {
       var url = dataLoaderScriptNode.src;
 
       document.getElementById('tab-content').innerHTML = outputHTML;
-      cache[url] = outputHTML;
+      cache[url].html = outputHTML;
       document.head.removeChild(dataLoaderScriptNode);
+      if (cache[url].done) {
+        cache[url].done();
+      }
     }
   };
 }());

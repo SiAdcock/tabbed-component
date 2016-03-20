@@ -5,7 +5,10 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     files: [
       'node_modules/jquery/dist/jquery.js',
-      'spec/index.spec.js'
+      'app/lib/vendor/hogan-3.0.2.js',
+      'app/modules/tabbed-component.js',
+      'spec/index.spec.js',
+      'spec/fixtures/index.html'
     ]
   });
 };

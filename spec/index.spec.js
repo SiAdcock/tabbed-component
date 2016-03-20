@@ -1,8 +1,10 @@
-describe('simple tests', function() {
-  it('works', function() {
-    expect(1).toBe(1);
+describe('tabbed component tests', function() {
+  beforeAll(function(done) {
+    jasmine.getFixtures().fixturesPath = 'base/spec/fixtures';
+    loadFixtures('index.html');
+    APP.tabbedComponent.init(done);
   });
-  it('destroys the DOM', function() {
-    expect($('#window')).not.toBeInDOM();
+  it('initialises', function() {
+    expect($('.tabbed-component__tab__news')).toBeInDOM();
   });
 });
